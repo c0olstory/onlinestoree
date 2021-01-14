@@ -9,26 +9,22 @@
    }
 
    &__heading {
-      color: $ColorSelect;
-      font-size: 24px;
-      line-height: 29px;
+      text-transform: uppercase;
+      @include font(24px, $ColorSelect, 29px);
    }
 
-   &__links {
-
-   }
+   // &__links {
+   // }
 }
 
 .bread-crumbs {
-   font-weight: 300;
-   font-size: 14px;
-   line-height: 17px;
-   text-transform: uppercase;
+   
   
    &__link {
-      color: #636363;
+      @include font(14px, #636363, 17px);
+      font-weight: 300;
+      text-transform: uppercase;
       padding: 0 3px 0 0;
-      // ! hover поправить
       &:not(:last-child):after {
          content: "/";
          padding-left: 5px;
@@ -96,9 +92,7 @@
    // }
 
    &__text {
-      font-size: 14px;
-      line-height: 17px;
-      color: #6F6E6E;
+      @include font(14px, #6F6E6E, 17px);
       padding-right: 10px;
    }
 
@@ -129,10 +123,9 @@
 
    &__title {
       cursor: pointer;
+      text-transform: uppercase;
       display: flex;
-      font-size: 14px;
-      line-height: 17px;
-      color: #6F6E6E;   
+      @include font(14px, #6F6E6E, 17px);  
       &:hover {
          color: $ColorSelect;
       }
@@ -142,10 +135,9 @@
    }
 
    &__title_bold {
-      color: #000;
+      text-transform: uppercase;
       font-weight: 600;
-      font-size: 14px;
-      line-height: 17px;
+      @include font(14px, #000, 17px);
       padding-left: 16px;
       position: relative;
       z-index: 10;
@@ -188,9 +180,7 @@
 
    &__label {
       margin-left: 9px;
-      color: #6F6E6E;
-      font-size: 14px;
-      line-height: 16px;
+      @include font(14px, #6F6E6E, 16px);
       cursor: pointer;
    }
 
@@ -219,9 +209,7 @@
       position: relative;
       display: flex;
       justify-content: flex-start;
-      color: #EF5B70;
-      font-size: 14px;
-      line-height: 17px;
+      @include font(14px, #EF5B70, 17px);
       padding: 10px 0 10px 16px;
       border-bottom: 1px solid #EBEBEB;
       transition: border 0.5s ease-in;
@@ -253,9 +241,7 @@
    &__subcategories {
       padding-left: 17px;
       margin: 5px 0;
-      color: #6F6E6E;
-      font-size: 14px;
-      line-height: 17px;
+      @include font(14px, #6F6E6E, 17px);
       &:hover {
          color: $ColorSelect;
       }

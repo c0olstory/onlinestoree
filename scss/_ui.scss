@@ -25,11 +25,152 @@ body.ie {
 }
 /*--------------------*/
 
-$pink: #F16D7F;
-$black: #222;
-
+$ColorSelect: #F16D7F;
+$ColorSelectTwo: #222;
 /*--------------------*/
 
 summary::-webkit-details-marker {
 	display: none;
+}
+/*--------------------*/
+
+/*-----button add to cart---------------*/
+.add-to-cart {
+	padding: 9px 15px;
+	cursor: pointer;
+	border: 1px solid $ColorSelect;
+	transition: box-shadow 0.3s ease;
+	display: flex;
+	&:hover {
+		box-shadow: 0 0 5px $ColorSelect;
+	}
+
+	&__svg path{
+		fill: $ColorSelect;
+	}
+
+	&__span {
+      @include font(14px, $ColorSelect, 17px);
+      align-self: center;
+      margin-left: 11px;
+	}
+}
+.white-add {
+	border-color: #fff;
+	&:hover {
+		box-shadow: 0 0 5px #fff;
+	}
+	& svg path {
+		fill: #fff;
+	}
+	& span {
+		color: #fff;
+	}
+}
+/*--------------------*/
+/*--------Card Product------------*/
+.cart-items {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   margin: 0 -15px;
+   &__background {
+      background-color: #F8F8F8;
+      transition: transform 0.5s ease;
+      &:hover {
+         transform: scale(1.01);
+      }
+      &:hover .cart-items__img  {
+         filter: brightness(30%);
+         background-color: rgba(33, 22, 22, 0.7); // !вынужден был добавить background, т.к. второе изображение отличается от остальных по ширине. Если есть решение получше, подскажите пожалуйста.
+      }
+      &:hover .cart-items__add-to-cart {
+         display: flex;
+      }
+   }
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      flex: 0 1 33.3333%;
+      padding: 0 15px;
+      margin: 15px 0; 
+   }
+
+   &__img-block {
+      position: relative;
+   }
+
+   &__img {
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 420px;
+      position: relative;
+      transition: filter 0.3s ease, background-color 0.3s ease;
+   }
+
+   &__add-to-cart {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+   }
+
+   &__content {
+      // display: flex;
+      // flex-direction: column;
+      flex: 1 1 auto;
+      padding: 0 18px;
+      margin-bottom: 18px;
+   }
+
+   &__title {
+      @include font(13px, #000, 16px);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+   }
+
+   &__text {
+      @include font(14px, #5D5D5D, 17px);
+      font-weight: 300;
+      // flex: 1 1 auto;
+   }
+
+   &__price {
+      padding: 0 18px;
+      margin-bottom: 20px;
+      @include font(16px, #F16D7F, 19px);
+   }
+
+}
+/*--------------------*/
+
+
+.button-send {
+   background-color: $ColorSelect;
+   transition: background-color .3s ease, box-shadow .3s ease;
+   text-transform: uppercase;
+   &:hover {
+      background-color: #E05C6E;
+      box-shadow: 0 0 5px #E05C6E;
+   }
+}
+
+.input {
+   width: 360px;
+   height: 45px;
+   @include font(13px, #B1B1B1, 16px);
+   font-weight: 300;
+   border: 1px solid #A4A4A4;
+   padding: 0 16px;
+   transition: box-shadow .3s ease;
+      &:hover {
+         box-shadow: 0 0 5px #5E5E5E;
+      }
+      &:focus {
+         border: 1px solid $ColorSelectTwo;
+      }
 }

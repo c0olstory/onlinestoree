@@ -24,37 +24,40 @@
 
    &__search {
       align-self: center;
-      // transition: all 1s ease;
-      // &:hover {
-      //    svg path {
-      //       fill: $ColorSelect;
-      //    }
-      // }
+      & svg path {
+         transition: fill .5s ease;
+      }
+      &:hover path {
+         fill: $ColorSelect;
+      }
    }
 
    &__menu {
-      // &:hover {
-      //    svg path {
-      //       fill: $ColorSelect;
-      //    }
-      // }
+      & svg path {
+         transition: fill .5s ease;
+      }
+      &:hover path {
+         fill: $ColorSelect;
+      }
    }  
 
    &__profile {
       margin: 0 33px;
-      // &:hover {
-      //    svg path {
-      //       fill: $ColorSelect;
-      //    }
-      // }   
+      & svg path {
+         transition: fill .5s ease;
+      }
+      &:hover path {
+         fill: $ColorSelect;
+      }  
    }
 
    &__basket {
-      // &:hover {
-      //    svg path {
-      //       fill: $ColorSelect;
-      //    }
-      // }
+      & svg path {
+         transition: fill .5s ease;
+      }
+      &:hover path {
+         fill: $ColorSelect;
+      }
    }
 }
 

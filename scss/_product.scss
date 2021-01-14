@@ -1,0 +1,136 @@
+/*--------------------*/
+.slider {
+   background-color: #F7F7F7;
+   border: 1px solid #EAEAEA;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   &__left-arrow {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      transform: rotate(-180deg);
+      height: 47px;
+      width: 47px;
+      background-color: rgba(42, 42, 42, 0.15);
+      transition: box-shadow 0.3s ease;
+      &:hover path {
+         fill: $ColorSelectTwo;
+      }
+      &:hover {
+         box-shadow: 0 0 5px #5E5E5E;
+      }
+   }
+
+   &__right-arrow {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+      height: 47px;
+      width: 47px;
+      background-color: rgba(42, 42, 42, 0.15);
+      transition: box-shadow 0.3s ease;
+      &:hover path {
+         fill: $ColorSelectTwo;
+      }
+      &:hover {
+         box-shadow: 0 0 5px #5E5E5E;
+      }
+   }
+}
+
+
+
+.collection {
+   margin-bottom: 64px;
+   &__body {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #EAEAEA;
+      transform: translate(0, -64px);
+      position: relative;
+      z-index: 5;
+      background-color: #fff;
+   }
+
+   &__category {
+      text-transform: uppercase;
+      @include font(14px, $ColorSelect, 17px);
+      font-weight: 300;
+      position: relative;
+      padding-bottom: 12px;
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translate(-50%, 0);
+         width: 63px;
+         height: 3px;
+         background-color: #EF5B70;
+      }
+   }
+
+   &__heading {
+      text-transform: uppercase;
+      font-weight: 300;
+      @include font(18px, #4D4D4D, 22px);
+      margin-top: 12px;
+   }
+
+   &__text {
+      font-weight: 300;
+      @include font(14px, #5E5E5E, 17px);
+      text-align: center;
+      margin-top: 48px;
+      margin-bottom: 32px;
+      max-width: 555px;
+   }
+
+   &__price {
+      font-weight: 300;
+      @include font(24px, #EF5B70, 29px);
+      position: relative;
+      padding-bottom: 64px;
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         transform: translate(-50%, 0);
+         width: 641px;
+         height: 1px;
+         background-color: #EAEAEA;
+      }
+   }
+
+   &__details-body {
+      display: flex;
+      margin-top: 64px;
+      margin-bottom: 64px;
+   }
+
+   &__details {
+      margin-right: 22px;
+      &:last-child {
+         margin-right: 0;
+      }
+   }
+}
+
+
+
+/*--------------------*/

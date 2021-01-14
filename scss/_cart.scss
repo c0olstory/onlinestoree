@@ -1,0 +1,193 @@
+/*--------------------*/
+.shopping-cart {
+   margin-top: 96px;
+   margin-bottom: 128px;
+   &__content {
+      display: flex;
+      justify-content: space-between;
+
+   }
+
+   // &__card-products {
+   // }
+
+   // &__buy {
+   // }
+
+   // &__form {
+   // }
+
+   // &__total-sum {
+   // }
+   
+	&__buttons {
+      display: flex;
+      justify-content: space-between;
+	}
+
+	&__option {
+      background-color: #fff;
+      border: 1px solid #A4A4A4;
+      font-weight: 300;
+      @include font(14px, #000, 17px);
+      padding: 16px 40px;
+      transition: box-shadow .3s ease;
+      &:hover {
+         box-shadow: 0 0 5px #5E5E5E;
+      }
+	}
+
+}
+
+.card-products {
+   // &__body {
+
+   // }
+   &__card-product {
+      display: flex;
+      background-color: #fff;
+      filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+      margin-bottom: 40px;
+      max-width: 652px;  
+      position: relative;
+      transition: transform 0.3s ease;
+      &:last-child {
+         margin-bottom: 72px;
+      }
+      &:hover {
+         transform: scale(1.01);
+      }
+   }
+
+   // &__img {
+   // }
+
+   &__data {
+      padding: 22px 97px 62px 32px;
+   }
+
+   &__heading {
+      @include font(24px, $ColorSelectTwo, 29px);
+      max-width: 262px;
+      margin-bottom: 42px;
+      text-transform: uppercase;
+   }
+
+   &__text {
+      @include font(22px, #575757, 26px);
+      margin-bottom: 6px;
+      & span {
+         color: $ColorSelect;
+         margin-left: 5px;
+      }
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   &__input {
+      width: 44px;
+      height: 25px;
+      border: 1px solid #EAEAEA;
+      margin-left: 24px;
+      text-align: center;
+      transition: border 0.3s ease;
+      &:hover {
+         border: 1px solid #5E5E5E;
+      }
+      &:focus {
+         border: 1px solid $ColorSelectTwo;
+      }
+   }
+
+   &__close {
+      position: absolute;
+      top: 28px;
+      right: 22px;
+      transition: transform .5s ease;
+      &:hover {
+         transform: rotate(90deg);
+      }
+      &:active {
+         transform: scale(0.8);
+      }
+   }
+}
+.form-shopping {
+   display: flex;
+   flex-direction: column;
+   &__legend {
+      font-weight: 300;
+      @include font(16px, $ColorSelectTwo, 19px);
+      margin-bottom: 20px;
+      margin-top: 20px;
+   }
+
+   &__input {
+      margin-bottom: 20px;
+      &:last-child {
+         margin-bottom: 24px;
+      }
+   }
+
+   &__button {
+      font-weight: 300;
+      @include font(11px, #4A4A4A, 13px);
+      margin-bottom: 58px;
+      display: inline-flex;
+      padding: 10px 14px;
+      background-color: #fff;
+      border: 1px solid #A4A4A4;
+      text-transform: uppercase;
+      max-width: 100px;
+      transition: box-shadow .3s ease;
+      &:hover {
+         box-shadow: 0 0 5px #5E5E5E;
+      }
+   }
+}
+.total-sum {
+   background-color: #F5F3F3;
+   padding: 40px 44px;
+   display: flex;
+   flex-direction: column;
+   &__sub {
+      @include font(11px, #4A4A4A, 13px);
+      margin-bottom: 12px;
+      align-self: flex-end;
+      & span {
+         margin-left: 30px;
+      }
+   }
+
+   &__grand {
+      font-weight: 300;
+      @include font(16px, #222, 19px);
+      align-self: flex-end;
+      & span {
+         color: $ColorSelect;
+         font-weight: 700;
+         margin-left: 30px;
+      }
+      &:after {
+         content: "";
+         border-bottom: 1px solid #E2E2E2;  
+         width: 100%;
+      }
+   }
+
+   &__line {
+      height: 1px;
+      width: 100%;
+      background-color: #E2E2E2;
+      margin: 21px 0 17px 0;
+   }
+
+   &__button {
+      font-weight: 300;
+      @include font(16px, #fff, 19px);
+      padding: 16px 42px;
+   }
+}
+
+/*--------------------*/
