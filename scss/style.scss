@@ -1,6 +1,7 @@
 @import "_null.scss";
-@import "_ui.scss";
 @import "_mixins.scss";
+@import "_ui.scss";
+
 
 /*--------------------*/
 
@@ -36,55 +37,54 @@ body {
    background: linear-gradient(to right, #f4f3f3 50%, #F1E4E6 50%);
    padding-left: calc(50% - 800px);
    padding-right: calc(50% - 800px);
-		&__body {
+	&__body {
          display: flex;
          justify-content: space-between
-		}
+	}
 
-		&__photo {
-         width: 50%;
-         & img {
+	&__photo {
+      width: 50%;
+      & img {
             width: 100%;
-         }
-		}
-
-		&__content {
-         width: 50%;
-         display: inline-flex;
-         flex-direction: column;
-         justify-content: center;
-         padding-left: 92px;
-         
       }
+	}
+
+	&__content {
+      width: 50%;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 92px;
+         
+   }
       
-      &__content-body {
-         position: relative;
-         padding-left: 28px;
-         &:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 12px; 
-            height: 100%;
-            background-color: #F16D7F;
-            margin-right: 16px;
-         }
+   &__content-body {
+      position: relative;
+      padding-left: 28px;
+      &:before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 12px; 
+         height: 100%;
+         background-color: #F16D7F;
+         margin-right: 16px;
       }
+   }
 
-		&__heading {
-         font-weight: 900;
-         text-transform: uppercase;
-         @include font(48px, $ColorSelectTwo, 58px);
+	&__heading {
+      font-weight: 900;
+      text-transform: uppercase;
+      @include font(48px, $ColorSelectTwo, 58px);
          
-		}
+	}
 
-		&__text {
-         font-size: 32px;
-         line-height: 38px;
-         font-weight: 700;
-         text-transform: uppercase;
-		}
+	&__text {
+      @include font(32px, $ColorSelectTwo, 38px);
+      font-weight: 700;
+      text-transform: uppercase;
+	}
 }
 
 /*--------------------*/
@@ -133,16 +133,14 @@ body {
    }
 
    &__text {
-      font-size: 16px;
-      line-height: 19px;
-      color: #fff;
+      @include font(16px, #fff, 19px);
+      text-transform: uppercase;
    }
 
    &__heading {
-      color: $ColorSelect;
-      font-size: 24px;
-      line-height: 29px;
+      @include font(24px, $ColorSelect, 29px);
       font-weight: 700;
+      text-transform: uppercase;
    }
 
    &__row {
@@ -150,6 +148,8 @@ body {
    }
 
    &__photo-long {
+      display: block;
+      padding-bottom: 16%;
       & img {
          filter: brightness(30%);
       }
@@ -170,16 +170,12 @@ body {
    }
 
    &__heading {
-      color: $ColorSelectTwo;
-      font-size: 30px;
-      line-height: 36px;
+      @include font(30px, $ColorSelectTwo, 36px);
       margin-bottom: 6px;
    }
 
    &__description {
-      color: #9F9F9F;
-      font-size: 14px;
-      line-height: 17px;   
+      @include font(14px, #9F9F9F, 17px);
    }
 
    // &__items {
@@ -192,6 +188,8 @@ body {
       padding: 14px 38px;
       border: 1px solid #FF6A6A;
       transition: background-color 0.3s ease-in, color 0.3s ease-in;
+      @include font(16px, #F26376, 19px);
+      font-weight: 400px;
       &:hover {
          background-color: #F16D7F;
          color: #fff;
@@ -205,92 +203,12 @@ body {
       //    line-height: 19px;
       //    font-weight: 400px;
       // }
-      color: #F26376;
-         font-size: 16px;
-         line-height: 19px;
-         font-weight: 400px;
+      
+      
    }
 }
 
-.cart-items {
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
-   margin: 0 -15px;
-   &__background {
-      background-color: #F8F8F8;
-      &:hover .cart-items__img  {
-         filter: brightness(30%);
-         background-color: rgba(33, 22, 22, 0.7); // !вынужден был добавить background, т.к. второе изображение отличается от остальных по ширине. Если есть решение получше, подскажите пожалуйста.
-      }
-      &:hover .cart-items__add-to-cart {
-         display: flex;
-      }
-   }
 
-   &__item {
-      display: flex;
-      flex-direction: column;
-      flex: 0 1 33.3333%;
-      padding: 0 15px;
-      margin: 15px 0; 
-   }
-
-   &__img-block {
-      position: relative;
-   }
-
-   &__img {
-      margin-bottom: 25px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 420px;
-      position: relative;
-      transition: filter 0.3s ease, background-color 0.3s ease;
-   }
-
-   &__add-to-cart {
-      display: none;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-   }
-
-   &__content {
-      // display: flex;
-      // flex-direction: column;
-      flex: 1 1 auto;
-      padding: 0 18px;
-      margin-bottom: 18px;
-   }
-
-   &__title {
-      font-size: 13px;
-      line-height: 16px;
-      color: #000;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-   }
-
-   &__text {
-      color: #5D5D5D;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 17px;
-      // flex: 1 1 auto;
-   }
-
-   &__price {
-      padding: 0 18px;
-      margin-bottom: 20px;
-      color: #F16D7F;
-      font-size: 16px;
-      line-height: 19px;
-   }
-
-}
 
 /*--------------------*/
 
@@ -315,182 +233,23 @@ body {
    }
 
    &__title {
-      font-size: 20px;
-      line-height: 24px;
-      color: #FBFBFB;
+      @include font(20px, #FBFBFB, 24px);
       margin-bottom: 16px;
       margin-top: 20px;
    }
 
    &__text {
       font-weight: 300;
-      font-size: 14px;
-      line-height: 17px;
-      color: #FBFBFB;
+      @include font(14px, #FBFBFB, 17px);
    }
 }
-
-
-
-
-
-
-
-
-
-
 /*--------------------*/
-.slider {
-   background-color: #F7F7F7;
-   border: 1px solid #EAEAEA;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   position: relative;
-   &__left-arrow {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 50%;
-      left: 0;
-      transform: translate(0, -50%);
-      transform: rotate(-180deg);
-      height: 47px;
-      width: 47px;
-      background-color: rgba(42, 42, 42, 0.15);
-      transition: box-shadow 0.3s ease;
-      &:hover path {
-         fill: $ColorSelectTwo;
-      }
-      &:hover {
-         box-shadow: 0 0 5px #5E5E5E;
-      }
-   }
-
-   &__right-arrow {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      top: 50%;
-      right: 0;
-      transform: translate(0, -50%);
-      height: 47px;
-      width: 47px;
-      background-color: rgba(42, 42, 42, 0.15);
-      transition: box-shadow 0.3s ease;
-      &:hover path {
-         fill: $ColorSelectTwo;
-      }
-      &:hover {
-         box-shadow: 0 0 5px #5E5E5E;
-      }
-   }
-}
-
-
-
-.collection {
-   margin-bottom: 64px;
-   &__body {
-      padding-top: 64px;
-      padding-bottom: 64px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid #EAEAEA;
-      transform: translate(0, -64px);
-      position: relative;
-      z-index: 5;
-      background-color: #fff;
-   }
-
-   &__category {
-      text-transform: uppercase;
-      color: $ColorSelect;
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 17px;
-      position: relative;
-      padding-bottom: 12px;
-      &::after {
-         content: "";
-         position: absolute;
-         bottom: 0;
-         left: 50%;
-         transform: translate(-50%, 0);
-         width: 63px;
-         height: 3px;
-         background-color: #EF5B70;
-      }
-   }
-
-   &__heading {
-      text-transform: uppercase;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 22px;
-      color: #4D4D4D;
-      margin-top: 12px;
-   }
-
-   &__text {
-      font-weight: 300;
-      font-size: 14px;
-      line-height: 17px;
-      text-align: center;
-      color: #5E5E5E;
-      margin-top: 48px;
-      margin-bottom: 32px;
-      max-width: 555px;
-   }
-
-   &__price {
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 29px;
-      color: #EF5B70;
-      position: relative;
-      padding-bottom: 64px;
-      &::after {
-         content: "";
-         position: absolute;
-         bottom: 0;
-         left: 50%;
-         transform: translate(-50%, 0);
-         width: 641px;
-         height: 1px;
-         background-color: #EAEAEA;
-      }
-   }
-
-   &__details-body {
-      display: flex;
-      margin-top: 64px;
-      margin-bottom: 64px;
-   }
-
-   &__details {
-      margin-right: 22px;
-      &:last-child {
-         margin-right: 0;
-      }
-   }
-}
-
-
-
-/*--------------------*/
-
-
-
-
 
 
 
 
 @import "_catalog.scss";
-
+@import "_product.scss";
+@import "_cart.scss";
+@import "_registration.scss";
 @import "_footer.scss";

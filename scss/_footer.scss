@@ -33,25 +33,21 @@
    }
 
    &__text {
-      color: $ColorSelectTwo;
+      @include font(20px, $ColorSelectTwo, 24px);
       max-width: 360px;
       margin: 0 auto;
-      font-size: 20px;
-      line-height: 24px;
       font-style: italic;
    }
 
    &__heading {
-      color: $ColorSelectTwo;
-      font-size: 24px;
-      line-height: 38px;
+      @include font(24px, $ColorSelectTwo, 38px);
+      text-transform: uppercase;
       font-weight: 700;
    }
 
    &__description {
-      color: $ColorSelectTwo;
-      font-size: 18px;
-      line-height: 30px;
+      @include font(18px, $ColorSelectTwo, 30px);
+      text-transform: uppercase;
       margin-bottom: 32px;
    }
 
@@ -63,9 +59,7 @@
 
    &__mail {
       flex: 1 1 auto;
-      font-size: 14px;
-      line-height: 17px;
-      color: $ColorSelectTwo;
+      @include font(14px, $ColorSelectTwo, 17px);
       border-radius: 25px 0 0 25px;
       background-color: #E1E1E1;
       max-width: 255px;
@@ -78,9 +72,7 @@
       border-radius: 0px 25px 25px 0px;
       transition: background-color 0.3s ease-in;
       & span {
-         font-size: 14px;
-         line-height: 17px;
-         color: #fff;
+         @include font(14px, #fff, 17px);
       }
       &:hover {
          background-color: #E05C6E;
@@ -100,9 +92,7 @@
    }
 
    &__rights {
-      font-size: 16px;
-      line-height: 19px;
-      color: #FBFBFB;
+      @include font(16px, #FBFBFB, 19px);
    }
 
    // &__social {
