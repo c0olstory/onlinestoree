@@ -18,7 +18,7 @@
          <div class="container">
             <div class="header__content">
                <div class="header__left">
-                  <!-- !У меня вопрос, как лучше реализовать иконки меню. svg или через img? -->
+                  <!-- !У меня вопрос как лучше реализовать иконки меню. svg или через img? -->
                   <a class="header__logo" href="index.html"><img src="img/icon-header/logo.svg" alt="Логотип"></a>
                   <a class="header__search" href="#">
                      <!-- <img src="img/icon-header/search.svg" alt="Поиск"> -->
@@ -58,75 +58,90 @@
       </header>
 
       <div class="page">
-         <section class="the-brand">
-            <!-- <div class="container"> -->
-            <div class="the-brand__body">
-               <div class="the-brand__photo">
-                  <img src="img/header/man.png" alt="фото">
-               </div>
-               <div class="the-brand__content">
-                  <div class="the-brand__content-body">
-                     <h1 class="the-brand__heading">THE BRAND</h1>
-                     <p class="the-brand__text">OF LUXERIOUS <span class="pink">FASHION</span></p>
-                  </div>
+
+         <section class="arrivals">
+            <div class="container">
+               <div class="arrivals__body">
+                  <h2 class="arrivals__heading">NEW ARRIVALS </h2>
+                  <nav class="arrivals__links bread-crumbs">
+                     <a class="bread-crumbs__home" href="#">Home</a> &#8260;
+                     <!-- !как можно иначе реализовать наклонную черту между хлебными крошками? -->
+                     <a class="bread-crumbs__men" href="#">Men</a> &#8260;
+                     <a class="bread-crumbs__new _active" href="#">NEW ARRIVALS</a>
+                  </nav>
                </div>
             </div>
-            <!-- </div> -->
          </section>
-         <div class="categories">
+
+         <div class="filter">
             <div class="container">
-               <div class="categories__columns">
-                  <div class="categories__column">
-                     <!-- <div class="categories__column-content"> -->
-                     <a href="catalog.html" class="categories__photo _ibg">
-                        <img src="img/categories/01.png" alt="FOR WOMEN">
-                     </a>
-                     <a href="catalog.html" class="categories__content">
-                        <!-- !Нужна ли здесь вторая ссылка?  -->
-                        <p class="categories__text">30% OFF</p>
-                        <h3 class="categories__heading">FOR WOMEN</h3>
-                     </a>
-                     <!-- </div> -->
+               <div class="filter__body">
+                  <div class="filter__list">
+                     <span class="filter__text-bold">FILTER</span>
+                     <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                           d="M0.833333 10H4.16667C4.625 10 5 9.625 5 9.16667C5 8.70833 4.625 8.33333 4.16667 8.33333H0.833333C0.375 8.33333 0 8.70833 0 9.16667C0 9.625 0.375 10 0.833333 10ZM0 0.833333C0 1.29167 0.375 1.66667 0.833333 1.66667H14.1667C14.625 1.66667 15 1.29167 15 0.833333C15 0.375 14.625 0 14.1667 0H0.833333C0.375 0 0 0.375 0 0.833333ZM0.833333 5.83333H9.16667C9.625 5.83333 10 5.45833 10 5C10 4.54167 9.625 4.16667 9.16667 4.16667H0.833333C0.375 4.16667 0 4.54167 0 5C0 5.45833 0.375 5.83333 0.833333 5.83333Z"
+                           fill="black" />
+                     </svg>
                   </div>
-                  <div class="categories__column">
-                     <a href="catalog.html" class="categories__photo _ibg">
-                        <img src="img/categories/02.png" alt="FOR MEN">
-                     </a>
-                     <a href="catalog.html" class="categories__content">
-                        <p class="categories__text">HOT DEAL</p>
-                        <h3 class="categories__heading">FOR MEN</h3>
-                     </a>
-                  </div>
-                  <div class="categories__column">
-                     <a href="catalog.html" class="categories__photo _ibg">
-                        <img src="img/categories/03.png" alt="FOR KIDS">
-                     </a>
-                     <a href="catalog.html" class="categories__content">
-                        <p class="categories__text">NEW ARRIVALS</p>
-                        <h3 class="categories__heading">FOR KIDS</h3>
-                     </a>
+                  <div class="filter__filters">
+                     <div class="filter__column">
+                        <span class="filter__text">TRENDING NOW</span>
+                        <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z"
+                              fill="#6F6E6E" />
+                        </svg>
+                     </div>
+                     <div class="filter__column">
+                        <details class="filter__details details">
+                           <summary class="details__title">SIZE
+                              <!-- <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path
+                                    d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z"
+                                    fill="#6F6E6E" />
+                              </svg> -->
+                           </summary>
+                           <form class="details__form" action="#">
+                              <div class="details__row">
+                                 <input class="details__input" name="size-xs" id="xs" type="checkbox"> 
+                                 <label class="details__label" for="xs">XS</label>
+                              </div>
+                              <div class="details__row">
+                                 <input class="details__input" name="size-s" id="s" type="checkbox"> 
+                                 <label class="details__label" for="s">S</label>
+                              </div>
+                              <div class="details__row">
+                                 <input class="details__input" name="size-m" id="m" type="checkbox"> 
+                                 <label class="details__label" for="m">M</label>
+                              </div>
+                              <div class="details__row">
+                                 <input class="details__input" name="size-l" id="l" type="checkbox"> 
+                                 <label class="details__label" for="l">L</label>
+                              </div>
+                           </form>
+                        </details>
+                     </div>
+                     <div class="filter__column">
+                        <span class="filter__text">PRICE</span>
+                        <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M5.00214 5.00214C4.83521 5.00247 4.67343 4.94433 4.54488 4.83782L0.258102 1.2655C0.112196 1.14422 0.0204417 0.969958 0.00302325 0.781035C-0.0143952 0.592112 0.0439493 0.404007 0.165221 0.258101C0.286493 0.112196 0.460759 0.0204417 0.649682 0.00302327C0.838605 -0.0143952 1.02671 0.043949 1.17262 0.165221L5.00214 3.36602L8.83167 0.279536C8.90475 0.220188 8.98884 0.175869 9.0791 0.149125C9.16937 0.122382 9.26403 0.113741 9.35764 0.1237C9.45126 0.133659 9.54198 0.162021 9.6246 0.207156C9.70722 0.252292 9.7801 0.313311 9.83906 0.386705C9.90449 0.460167 9.95405 0.546351 9.98462 0.639855C10.0152 0.733359 10.0261 0.83217 10.0167 0.930097C10.0073 1.02802 9.97784 1.12296 9.93005 1.20895C9.88227 1.29494 9.81723 1.37013 9.73904 1.42982L5.45225 4.88068C5.32002 4.97036 5.16154 5.01312 5.00214 5.00214Z"
+                              fill="#6F6E6E" />
+                        </svg>
+                     </div>
                   </div>
                </div>
-
-               <div class="categories__row">
-                  <a href="catalog.html" class="categories__photo-long">
-                     <img src="img/categories/long.png" alt="ACCESORIES">
-                  </a>
-                  <a href="catalog.html" class="categories__content">
-                     <p class="categories__text">LUXIROUS & TRENDY</p>
-                     <h3 class="categories__heading">ACCESORIES</h3>
-                  </a>
-               </div>
-
             </div>
          </div>
+
          <section class="featured">
             <div class="container">
                <div class="featured__body">
-                  <div class="featured__header">
+                  <!-- <div class="featured__header">
                      <h2 class="featured__heading">Fetured Items</h2>
                      <p class="featured__description">Shop for items based on what we featured in this week</p>
-                  </div>
+                  </div> -->
                   <div class="featured__items cart-items">
                      <div class="cart-items__item">
                         <div class="cart-items__background">
@@ -285,9 +300,28 @@
                         </div>
                      </div>
                   </div>
-                  <div class="featured__button">
-                     <span>Browse All Product</span> <!-- !нужен ли здесь span?  -->
+
+                  <div class="pagination">
+                     <div class="pagination__body">
+                        <a href="#"><svg class="pagination__arrow" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M8.99512 2L3.99512 7L8.99512 12L7.99512 14L0.995117 7L7.99512 0L8.99512 2Z"
+                              fill="black" />
+                        </svg></a>
+                        <div class="pagination__list">
+                           <a class="pagination__link _active" href="#">1</a>
+                           <a class="pagination__link" href="#">2</a>
+                           <a class="pagination__link" href="#">3</a>
+                           <a class="pagination__link" href="#">4</a>
+                           <a class="pagination__link" href="#">5</a>
+                           <a class="pagination__link" href="#">6.....20</a>
+                        </div>
+                        <a href="#"><svg class="pagination__arrow _rotate" width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M8.99512 2L3.99512 7L8.99512 12L7.99512 14L0.995117 7L7.99512 0L8.99512 2Z"
+                              fill="black" />
+                        </svg></a>
+                     </div>
                   </div>
+
                </div>
             </div>
          </section>
@@ -322,7 +356,7 @@
             </div>
          </div>
       </div>
-      <div class="footer">
+      <footer class="footer">
          <div class="subscribe-block">
             <div class="container">
                <div class="subscribe-block__body">
@@ -392,8 +426,9 @@
             </div>
          </div>
 
-      </div>
+      </footer>
 
 
 </body>
+
 </html>
