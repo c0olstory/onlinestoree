@@ -1,7 +1,7 @@
 /*------footer--------------*/
 
 .subscribe-block {
-   background: url(../img/subscribe/bg.png) center bottom / cover;
+   background: url(../img/subscribe/bg.jpg) center bottom / cover;
    // width: 100%;
    // min-height: 448px;
    position: relative;
@@ -20,12 +20,27 @@
       padding-top: 100px;
       padding-bottom: 150px;
       position: relative;
+      @media (max-width: $md1+px) {
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+         margin: 0 16px;
+         padding-top: 50px;
+         padding-bottom: 140px;
+      }
    }
 
    &__column {
       flex: 0 1 50%;
       text-align: center;
       align-self: center;
+      @media (max-width: $md1+px) {
+         flex: 0 1 100%;
+         margin-bottom: 48px;
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
    }
 
    &__img {
@@ -37,6 +52,10 @@
       max-width: 360px;
       margin: 0 auto;
       font-style: italic;
+      @media (max-width: $md4+px) {
+         font-size: 18px;
+         line-height: 22px;
+      }
    }
 
    &__heading {
@@ -49,6 +68,10 @@
       @include font(18px, $ColorSelectTwo, 30px);
       text-transform: uppercase;
       margin-bottom: 32px;
+      @media (max-width: $md4+px) {
+         font-size: 14px;
+         line-height: 21px;
+      }
    }
 
    &__form {
@@ -85,23 +108,48 @@
    padding-left: calc(50% - 570px);
    padding-right: calc(50% - 570px);
    &__body {
-      height: 79px;
+      // height: 79px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 24px 0;
+      @media (max-width: $md1+px) {
+         margin: 0 16px;
+      }
+      @media (max-width: $md4+px) {
+         flex-direction: column;
+         padding-bottom: 12px;
+      }
    }
 
    &__rights {
       @include font(16px, #FBFBFB, 19px);
+      @media (max-width: $md4+px) {
+         order: 1;
+      }
    }
 
-   // &__social {
-   // }
+   &__social {
+      @media (max-width: $md4+px) {
+         padding-top: 20px;
+         margin-bottom: 40px;
+      }
+   }
 
    &__list {
       display: flex;
       align-items: center;
       justify-content: center;
+   }
+
+   &__link-box {
+      margin: 0 4px 0 4px; 
+      &:first-child {
+         margin-left: 0;
+      }
+      &:last-child {
+         margin-right: 0;
+      }
    }
 
    &__link {
@@ -111,14 +159,7 @@
       display: flex;
       align-items: center;
       justify-content: center; 
-      margin: 0 4px 0 4px; 
       transition: background-color 0.3s ease-in;
-      &:first-child {
-         margin-left: 0;
-      }
-      &:last-child {
-         margin-right: 0;
-      }
       &:hover {
          background-color: #F16D7F;
          svg path {

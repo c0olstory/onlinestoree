@@ -1,4 +1,14 @@
 /*--------------------*/
+$ColorSelect: #F16D7F;
+$ColorSelectTwo: #222;
+$md1: $maxWidthContainer + 16;
+// $md2: 991.98;
+$md3: 768;
+$md4: 480;
+
+
+
+/*--------------------*/
 ._ibg {
 	position: relative;
 	img {
@@ -7,7 +17,7 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		object-fit: cover;
+      object-fit: cover;
 	}
 }
 body.ie {
@@ -25,8 +35,7 @@ body.ie {
 }
 /*--------------------*/
 
-$ColorSelect: #F16D7F;
-$ColorSelectTwo: #222;
+
 /*--------------------*/
 
 summary::-webkit-details-marker {
@@ -74,6 +83,10 @@ summary::-webkit-details-marker {
    justify-content: space-between;
    flex-wrap: wrap;
    margin: 0 -15px;
+   @media (max-width: $md1+px) {
+      margin: 0 -8px;
+      justify-content: center;
+   }
    &__background {
       background-color: #F8F8F8;
       transition: transform 0.5s ease;
@@ -82,7 +95,7 @@ summary::-webkit-details-marker {
       }
       &:hover .cart-items__img  {
          filter: brightness(30%);
-         background-color: rgba(33, 22, 22, 0.7); // !вынужден был добавить background, т.к. второе изображение отличается от остальных по ширине. Если есть решение получше, подскажите пожалуйста.
+         // background-color: rgba(33, 22, 22, 0.7);
       }
       &:hover .cart-items__add-to-cart {
          display: flex;
@@ -95,10 +108,21 @@ summary::-webkit-details-marker {
       flex: 0 1 33.3333%;
       padding: 0 15px;
       margin: 15px 0; 
+      @media (max-width: $md1+px) {
+         padding: 0 8px;
+         margin: 8px 0; 
+      }
+      @media (max-width: $md4+px) {
+         flex: 0 1 100%;
+      }
    }
 
    &__img-block {
       position: relative;
+      // @media (max-width: $md4+px) {
+      //    transform: scale(0.5);
+      //    width: 100%;
+      // }
    }
 
    &__img {
@@ -106,9 +130,14 @@ summary::-webkit-details-marker {
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 420px;
+      height: 420px;
+      width: 360px;
       position: relative;
       transition: filter 0.3s ease, background-color 0.3s ease;
+      @media (max-width: $md4+px) {
+         width: 100%;
+         // transform: scale(0.5);
+      }
    }
 
    &__add-to-cart {
@@ -174,3 +203,43 @@ summary::-webkit-details-marker {
          border: 1px solid $ColorSelectTwo;
       }
 }
+
+/*--------------------*/
+
+.button-close {
+   position: absolute;
+   transition: transform .5s ease;
+   background-color: transparent;
+   &:hover {
+      transform: rotate(90deg);
+   }
+   &:active {
+      transform: scale(0.8);
+   }
+
+}
+
+/*--------------------*/
+
+.categories-list {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+.subcategories {
+   padding-left: 17px;
+      margin: 5px 0;
+      @include font(14px, #6F6E6E, 17px);
+      &:hover {
+         color: $ColorSelect;
+      }
+      &:first-child {
+         margin-top: 24px;
+      }
+      &:last-child {
+         margin-bottom: 24px;
+      }
+}
+
+/*--------------------*/
