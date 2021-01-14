@@ -29,3 +29,7 @@ $pink: #F16D7F;
 $black: #222;
 
 /*--------------------*/
+
+summary::-webkit-details-marker {
+	display: none;
+}

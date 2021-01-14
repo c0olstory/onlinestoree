@@ -53,18 +53,40 @@ body {
 
    &__search {
       align-self: center;
+      // transition: all 1s ease;
+      // &:hover {
+      //    svg path {
+      //       fill: $pink;
+      //    }
+      // }
    }
 
-   // &__menu {
-   // }
+   &__menu {
+      // &:hover {
+      //    svg path {
+      //       fill: $pink;
+      //    }
+      // }
+   }  
 
    &__profile {
       margin: 0 33px;
+      // &:hover {
+      //    svg path {
+      //       fill: $pink;
+      //    }
+      // }   
    }
 
-   // &__basket {
-   // }
+   &__basket {
+      // &:hover {
+      //    svg path {
+      //       fill: $pink;
+      //    }
+      // }
+   }
 }
+
 
 /*--------------------*/
 
@@ -141,14 +163,18 @@ body {
       flex: 1 0 33.3333%;
       padding: 0 15px;
       position: relative;
-      // & img {
-      //    filter: brightness(30%);
-      // }
+      // left: 0;
+      // top: 0;
    }
 
+   // &__column-content {
+   //    position: relative;  
+   // }
+
    &__photo {
-      height: 100%;
-      width: 100%;
+      display: block;
+      // height: 100%;
+      // width: 100%;
       padding-top: 80%;
       & img {
          filter: brightness(30%);
@@ -160,11 +186,10 @@ body {
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      width: 100%;
-      height: 100%;
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
    }
 
    &__text {
@@ -187,8 +212,7 @@ body {
 
    &__photo-long {
       & img {
-         width: 100%;
-         filter: brightness(20%);
+         filter: brightness(30%);
       }
    }
 }
@@ -229,18 +253,24 @@ body {
       max-width: 215px;
       padding: 14px 38px;
       border: 1px solid #FF6A6A;
+      transition: background-color 0.3s ease-in, color 0.3s ease-in;
       &:hover {
-         background: #F16D7F;
-         span {
-            color: #fff;
-         }
+         background-color: #F16D7F;
+         color: #fff;
+         // span {
+         //    color: #fff;
+         // }
       }
-      & span {
-         color: #F26376;
+      // & span {
+      //    color: #F26376;
+      //    font-size: 16px;
+      //    line-height: 19px;
+      //    font-weight: 400px;
+      // }
+      color: #F26376;
          font-size: 16px;
          line-height: 19px;
          font-weight: 400px;
-      }
    }
 }
 
@@ -251,6 +281,13 @@ body {
    margin: 0 -15px;
    &__background {
       background-color: #F8F8F8;
+      &:hover .cart-items__img  {
+         filter: brightness(30%);
+         background-color: rgba(33, 22, 22, 0.7); // !вынужден был добавить background, т.к. второе изображение отличается от остальных по ширине. Если есть решение получше, подскажите пожалуйста.
+      }
+      &:hover .cart-items__add-to-cart {
+         display: flex;
+      }
    }
 
    &__item {
@@ -258,17 +295,11 @@ body {
       flex-direction: column;
       flex: 0 1 33.3333%;
       padding: 0 15px;
-      margin: 15px 0;
-      // & img {
-      //    margin-bottom: 25px;
-      //    // width: 100%;
-      //    // height: 100%;
-      //    // max-width: 420px;
-      //    // height: 360px;
-      //    display: flex;
-      //    align-items: center;
-      //    justify-content: center;
-      // }
+      margin: 15px 0; 
+   }
+
+   &__img-block {
+      position: relative;
    }
 
    &__img {
@@ -277,6 +308,32 @@ body {
       justify-content: center;
       align-items: center;
       min-height: 420px;
+      position: relative;
+      transition: filter 0.3s ease, background-color 0.3s ease;
+   }
+
+   &__add-to-cart {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 9px 15px;
+      cursor: pointer;
+      border: 1px solid #fff;
+      transition: box-shadow 0.3s ease;
+      &:hover {
+         box-shadow: 0 0 5px #fff;
+      }
+   }
+
+   &__add-to-cart-span {
+      color: #fff;
+      font-size: 14px;
+      line-height: 17px;  
+      font-weight: 400;
+      align-self: center;
+      margin-left: 11px;
    }
 
    &__content {
@@ -364,7 +421,7 @@ body {
    // left: 0;
    // object-fit: cover;
    width: 100%;
-
+   min-height: 448px;
    &__body {
       display: flex;
       justify-content: space-between;
@@ -375,6 +432,7 @@ body {
    &__column {
       flex: 0 1 50%;
       text-align: center;
+      align-self: center;
    }
 
    &__img {
@@ -421,13 +479,14 @@ body {
       border-radius: 25px 0 0 25px;
       background-color: #E1E1E1;
       max-width: 255px;
-      padding-left: 22px;
+      padding: 0 22px 0 22px;
    }
 
    &__button {
       flex: 0 0 100px;
       background-color: #F16D7F;
       border-radius: 0px 25px 25px 0px;
+      transition: background-color 0.3s ease-in;
       & span {
          font-size: 14px;
          line-height: 17px;
@@ -442,9 +501,10 @@ body {
 
 /*--------------------*/
 
-.footer {
+.footer-bottom {
    background-color: $black;
-
+   padding-left: calc(50% - 570px);
+   padding-right: calc(50% - 570px);
    &__body {
       height: 79px;
       display: flex;
@@ -476,6 +536,7 @@ body {
       align-items: center;
       justify-content: center; 
       margin: 0 4px 0 4px; 
+      transition: background-color 0.3s ease-in;
       &:first-child {
          margin-left: 0;
       }
@@ -492,4 +553,244 @@ body {
 }
 
 
+/*--------------------*/
+/*---------catalog-----------*/
+
+
+
+.arrivals {
+   background-color: #F8F3F4;
+   margin-bottom: 50px;
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      padding: 60px 0;
+   }
+
+   &__heading {
+      color: $pink;
+      font-size: 24px;
+      line-height: 29px;
+      font-weight: 400;
+   }
+
+   &__links {
+   }
+}
+
+.bread-crumbs {
+   font-weight: 300;
+   font-size: 14px;
+   line-height: 17px;
+   color: #636363;
+   text-transform: uppercase;
+  
+
+   &__home {
+      padding: 0 3px 3px 3px;
+      &:hover {
+         border-bottom: 1px solid #636363;
+      }
+   }
+
+   &__men {
+      padding: 0 3px 3px 3px;
+      &:hover {
+         border-bottom: 1px solid #636363;
+      }
+   }
+
+   &__new {
+      padding: 0 3px 3px 3px;
+      &:hover {
+         border-bottom: 1px solid #636363;
+      }
+   }
+
+   & ._active {
+      font-weight: 700;
+      color: $pink;
+      &:hover {
+         border-bottom: 1px solid $pink;
+      }
+   }
+}
+
+/*--------------------*/
+
+.filter {   
+   padding-bottom: 49px;
+   &__body {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      width: 100%;
+   }
+
+   &__list {
+      display: flex;
+      // align-self: flex-start;
+      align-items: center;
+      justify-content: start;
+   }
+
+   &__filters {
+      // display: flex;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 auto;
+   }
+
+   &__column {
+      display: flex;
+      align-items: center;
+      margin: 0 28px 0 0;
+      &:last-child {
+         margin: 0;
+      }
+   }
+
+   // &__details {
+   // }
+
+   &__text-bold {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      color: #000;
+      padding-right: 10px;
+   }
+
+   &__text {
+      font-size: 14px;
+      line-height: 17px;
+      color: #6F6E6E;
+      font-weight: 400;
+      padding-right: 10px;
+   }
+
+}
+
+
+.details {
+   position: relative;
+   &[open] {
+      transition: 3s all;
+   }
+   &[open] .details__title::after {
+      transform: rotate(180deg);
+   }
+
+   &__title {
+      font-size: 14px;
+      line-height: 17px;
+      color: #6F6E6E;
+      font-weight: 400;
+      padding-right: 21px;
+      
+      &::after {
+         content: "";
+         background-image: url(../img/filter/arrow.svg);
+         height: 6px;
+         width: 11px;
+         position: absolute;
+         top: 6px;
+         right: 0;
+         transition: transform 0.3s ease;
+      }
+   }
+
+   &__form {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 22px;
+      left: -9px;
+      z-index: 5;
+      background-color: #fff;
+      padding: 9px 30px 12px 9px;
+      box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+   }
+
+   &__row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 9px;
+      &:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   &__label {
+      margin-left: 9px;
+      color: #6F6E6E;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+   }
+
+   &__input {
+
+   }
+}
+
+
+/*--------------------*/
+
+
+.pagination {
+   display: flex;
+   justify-content: center;
+   
+   margin-top: 33px;
+   &__body {
+      display: flex;
+      padding: 13px 16px;
+      border: 1px solid #EBEBEB;
+      transition: border 0.5s ease-in;
+      &:hover {
+         border-color: #000;
+      }
+   }
+  
+   &__list {
+      margin-left: 16px;
+      margin-right: 16px;
+   }
+
+   &__link {   
+      margin: 0 8px;
+      color: #EBEBEB;
+      transition: color 0.3s ease-in;
+      &:hover {
+         color: #000;
+      }
+      &:first-child {
+         margin-left: 0px;
+      }
+      &:last-child {
+         margin-right: 0px;
+      }
+   }
+
+   &__arrow {
+      
+      transition: fill 2s ease-in; //!как повесить анимацию на svg?
+      &:hover path{
+         fill: #EF5B70;   
+      }
+   }
+   & ._rotate {
+      transform: rotate(180deg);
+   }
+
+   & ._active {
+      color: #EF5B70;
+   }
+}
+
+
+
+/*--------------------*/
 /*--------------------*/
