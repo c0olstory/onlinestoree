@@ -113,11 +113,17 @@ body {
 
    &__photo {
       display: block;
+      overflow: hidden;
       // height: 100%;
       // width: 100%;
       padding-top: 80%;
       & img {
+         transition: transform .5s ease;
          filter: brightness(30%);
+      }
+      & img:hover {
+         transform: scale(1.1);
+         // overflow: hidden;
       }
    }
 
@@ -150,8 +156,13 @@ body {
    &__photo-long {
       display: block;
       padding-bottom: 16%;
+      overflow: hidden;
       & img {
          filter: brightness(30%);
+         transition: transform .5s ease;
+      }
+      & img:hover {
+         transform: scale(1.05);
       }
    }
 }
